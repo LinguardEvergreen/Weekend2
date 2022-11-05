@@ -15,46 +15,46 @@ int main ()
         char scelta_finale = {'\0'};
         bool s=false;
         do{
-            menu ();
-			rewind(stdin);
-            scanf ("%c", &scelta_iniziale);
-            if(scelta_iniziale=='a'|| scelta_iniziale=='b'|| scelta_iniziale=='c'|| scelta_iniziale=='d')
-            	scelta_iniziale=toupper(scelta_iniziale);
-            switch (scelta_iniziale)
-			{
-                case 'A':{
-                	moltiplica();
-                    break;
-                }
-                case 'B':{
-                    dividi();
-                    break;
-                    }
-                case 'C':{
-                    ins_string();
-                    break;
-                }
-                case 'D':{
-                    printf("\nGrazie ed alla prossima\n");
-                    system("pause");
-                    return 0;
-                }
-                default:{
-                    printf("\nHai sbagliato ad inserire la scelta!!");
-                    break;
-                }
-            }
-			rewind(stdin);             
-            printf("\nCiao, vuoi continuare ad usare i miei servizi?\n\nRispondi Y oppure clicca qualsiasi altro tasto per uscire: ");
-            scanf("%c",&scelta_finale);
-            if(scelta_finale=='Y' || scelta_finale=='y')
-            	s=true;
-            else
-            	s=false;
-        }while(s);
-        printf("\nGrazie per avermi usato\n\n");
-        system("pause");
-        return 0;
+        	menu ();
+		rewind(stdin);
+        	scanf ("%c", &scelta_iniziale);
+        	if(scelta_iniziale=='a'|| scelta_iniziale=='b'|| scelta_iniziale=='c'|| scelta_iniziale=='d')
+            		scelta_iniziale=toupper(scelta_iniziale);
+        	switch (scelta_iniziale)
+		{
+                	case 'A':{
+                		moltiplica();
+                    		break;
+                	}
+                	case 'B':{
+                    		dividi();
+                    		break;
+                    	}
+                	case 'C':{
+                    		ins_string();
+                    		break;
+                	}
+                	case 'D':{
+                    		printf("\nGrazie ed alla prossima\n");
+                    		system("pause");
+                    		return 0;
+                	}
+                	default:{
+                    		printf("\nHai sbagliato ad inserire la scelta!!");
+                    		break;
+                	}
+            	}
+		rewind(stdin);             
+            	printf("\nCiao, vuoi continuare ad usare i miei servizi?\n\nRispondi Y oppure clicca qualsiasi altro tasto per uscire: ");
+            	scanf("%c",&scelta_finale);
+            	if(scelta_finale=='Y' || scelta_finale=='y')
+            		s=true;
+            	else
+            		s=false;
+        	}while(s);
+        	printf("\nGrazie per avermi usato\n\n");
+        	system("pause");
+        	return 0;
 
 }
 
@@ -89,17 +89,17 @@ void dividi ()
         scanf ("%d", &a);
         printf ("\nInserisci il denominatore: ");
         scanf ("%d", &b);
-        if(b==0)
+        if(b==0 || a==0)
         {
-        		printf("\nNon puoi dividere un numero per 0!!\n");
-        		divisione=0;
-        		printf ("\nLa divisione risulta errata: %f\n\n");
-		}
+        	printf("\nNon puoi dividere un numero per 0!!\n");
+        	divisione=0;
+        	printf ("\nLa divisione risulta errata: %f\n\n");
+	}
         else
         {
         	divisione = (float)a / b;
         	printf ("\nLa divisione tra %d e %d e': %0.2f\n\n", a,b,divisione);
-		}
+	}
         
 }
 
@@ -111,8 +111,8 @@ void ins_string ()
 {
 	
     char stringa[10];
-    rewind(stdin);
+	rewind(stdin);
 	printf ("\nInserisci la stringa: ");
-    fgets (stringa, 10 ,stdin);
-    printf("\n\nQuesta e' la tua stringa: %s ", stringa);
+	fgets (stringa, 10 ,stdin);
+	printf("\n\nQuesta e' la tua stringa: %s ", stringa);
 }
